@@ -1,0 +1,7 @@
+{
+  "name": "pamcha",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
