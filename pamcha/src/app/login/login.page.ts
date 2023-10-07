@@ -13,6 +13,10 @@ import {
 })
 export class LoginPage implements OnInit {
 
+  Usuario: string= "";
+  Password: string= "";
+
+
   formulariologin: FormGroup
 
   constructor(public fb: FormBuilder) { 
@@ -23,6 +27,13 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+
+  iniciarSesion()
+  {
+    console.log("Usuario + this.Usuario")
+    console.log("Password + this.Password")
   }
 
 }

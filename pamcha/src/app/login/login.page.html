@@ -9,12 +9,18 @@
           </div>
           <div padding>
             <ion-title size="large" style="text-align: center">Bienvenidos</ion-title>
+
             <ion-item>
-              <ion-input name="email" type="email" placeholder="Usuario" ngModel required></ion-input>
+              <ion-label position="floating">Usuario</ion-label>
+              <ion-input [(ngModel)]="Usuario" name="email" type="email" placeholder="Ingrese su Usuario" ngModel required></ion-input>
             </ion-item>
+
+
             <ion-item>
-              <ion-input name="password" type="password" placeholder="Contraseña" ngModel required></ion-input>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input  [(ngModel)]="Password" name="password" type="password" placeholder="Ingrese su password" ngModel required></ion-input>
             </ion-item>
+            
           </div>
           <div padding>
             <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Ingresar</ion-button>
