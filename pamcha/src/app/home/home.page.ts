@@ -15,7 +15,6 @@ export class HomePage {
   constructor(private toastController: ToastController) {}
 
   limpiar() {
-    // Limpia los campos
     this.nombre = "";
     this.apellido = "";
     this.educacion = "";
@@ -23,7 +22,6 @@ export class HomePage {
   }
 
   async mostrar() {
-    // Verifica si se ingresó el nombre y el apellido
     if (!this.nombre || !this.apellido) {
       const toast = await this.toastController.create({
         message: "Por favor, ingresa el nombre y el apellido",
@@ -32,7 +30,6 @@ export class HomePage {
       });
       await toast.present();
     } else {
-      // Muestra un mensaje emergente con el nombre y apellido
       const toast = await this.toastController.create({
         message: `Nombre: ${this.nombre}, Apellido: ${this.apellido}`,
         duration: 2000,
