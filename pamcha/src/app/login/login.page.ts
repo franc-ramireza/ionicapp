@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder,
-}from '@angular/forms';
+import { NavController } from '@ionic/angular'; // Agrega la importación de NavController
 
 @Component({
   selector: 'app-login',
@@ -13,27 +8,25 @@ import {
 })
 export class LoginPage implements OnInit {
 
-  Usuario: string= "";
-  Password: string= "";
+  Usuario: string = "";
+  Password: string = "";
 
+  constructor(private navCtrl: NavController) {}
 
-  formulariologin: FormGroup
+  ngOnInit() { 
 
-  constructor(public fb: FormBuilder) { 
-    this.formulariologin = this.fb.group({
-      'nombre': new FormControl("",Validators.required),
-      'password': new FormControl("",Validators.required)
-    })
   }
 
-  ngOnInit() {
+  ingresar() {
+    if (this.Usuario.length >= 3 && this.Usuario.length <= 8 && /^\d{4}$/.test(this.Password)) {
+      this.navCtrl.navigateForward('/home', {
+        queryParams: {
+          usuario: this.Usuario,
+          contrasena: this.Password,
+        }
+      });
+    } else {
+      console.log('Datos no válidos');
+    }
   }
-
-
-  iniciarSesion()
-  {
-    console.log("Usuario + this.Usuario")
-    console.log("Password + this.Password")
-  }
-
 }

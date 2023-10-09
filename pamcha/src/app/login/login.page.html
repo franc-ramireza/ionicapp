@@ -12,13 +12,13 @@
 
             <ion-item>
               <ion-label position="floating">Usuario</ion-label>
-              <ion-input [(ngModel)]="Usuario" name="email" type="email" placeholder="Ingrese su Usuario" ngModel required></ion-input>
+              <ion-input [(ngModel)]="Usuario" name="email" type="email" maxlength="8" minlength="3" placeholder="Ingrese su Usuario" ngModel required></ion-input>
             </ion-item>
 
 
             <ion-item>
               <ion-label position="floating">Password</ion-label>
-              <ion-input  [(ngModel)]="Password" name="password" type="password" placeholder="Ingrese su password" ngModel required></ion-input>
+              <ion-input  [(ngModel)]="Password" name="password" type="password" maxlength="4" minlength="4" placeholder="Ingrese su password" ngModel required></ion-input>
             </ion-item>
             
           </div>
@@ -29,9 +29,9 @@
       </ion-row>
     </ion-grid>
   </form>
-  <div id="container">
-    <p><a target="_self" rel="noopener noreferrer" href="register"></a>Crea tu cuenta gratis aqui</p>
-   
+
+  <div id="container" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 100vh; text-align: center;">
+    <p><a target="_self" rel="noopener noreferrer" href="register">Crea tu cuenta gratis aquí</a></p>
   </div>
 
 </ion-content>
