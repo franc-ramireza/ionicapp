@@ -24,10 +24,22 @@
       <ion-input [(ngModel)]="apellido" name="apellido" type="text" placeholder="Ingrese su apellido" ngModel required></ion-input>
     </ion-item>
 
+    <form [formGroup]="datosForm">
     <ion-item>
-      <ion-label position="floating">Nivel de Educación</ion-label>
-      <ion-input [(ngModel)]="educacion" name="educacion" type="text" placeholder="Ingrese su nivel de educación" ngModel required></ion-input>
+      <ion-select formControlName="nivelEducativo" placeholder="Nivel Educacional">
+      <ion-label >Nivel de Educación</ion-label>
+      <ion-item>
+        <ion-select formControlName="nivelEducativo" placeholder="Seleccionar"> Seleccione
+        <ion-label>Nivel Educativo</ion-label>
+        <ion-select-option value="Primaria">Basica</ion-select-option>
+        <ion-select-option value="Secundaria">Media</ion-select-option>
+        <ion-select-option value="Universidad">Superior</ion-select-option>
+        </ion-select>
+      </ion-item>
+ 
+      </ion-select>
     </ion-item>
+    </form>
 
     <ion-item>
       <ion-label position="floating">Fecha de Nacimiento</ion-label>

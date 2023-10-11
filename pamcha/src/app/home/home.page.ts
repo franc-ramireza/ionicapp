@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +10,18 @@ import { ToastController } from '@ionic/angular';
 export class HomePage {
   nombre: string = "";
   apellido: string = "";
-  educacion: string = "";
   fechaNacimiento: string = "";
+  datosForm: FormGroup;
 
-  constructor(private toastController: ToastController) {}
+  constructor(private toastController: ToastController,private formBuilder:FormBuilder) {
+    this.datosForm=this.formBuilder.group({
+      nivelEducativo:[' ',Validators.required]
+    })
+  } 
 
   limpiar() {
     this.nombre = "";
     this.apellido = "";
-    this.educacion = "";
     this.fechaNacimiento = "";
   }
 
@@ -32,6 +36,7 @@ export class HomePage {
     } else {
       const toast = await this.toastController.create({
         message: `Nombre: ${this.nombre}, Apellido: ${this.apellido}`,
+        buttons: ['OK'],
         duration: 2000,
         position: "bottom",
       });
